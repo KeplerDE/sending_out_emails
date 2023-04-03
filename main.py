@@ -14,12 +14,12 @@ class NewsFeed:
         self.language = language
 
     def get(self):
-        url = f"{self.base_url}" \
-              f"qInTitle={self.interest}&" \
-              f"from={self.from_date}&" \
-              f"to={self.to_date}&" \
-              f"language={self.language}&" \
-              f"apiKey={self.api_key}"
+        url = f"https://newsapi.org/v2/everything?q=tesla&from=2023-03-03&sortBy=publishedAt&apiKey=bc6a2a36bf2440e8b2982a4f121fa1e1" \
+              # f"qInTitle={self.interest}&" \
+              # f"from={self.from_date}&" \
+              # f"to={self.to_date}&" \
+              # f"language={self.language}&" \
+              # f"apiKey={self.api_key}"
 
         response = requests.get(url)
         content = response.json()
@@ -32,14 +32,7 @@ class NewsFeed:
         return email_body
 
 
-    def _build_url(self):
-        url = f"{self.base_url}" \
-              f"qInTitle={self.interest}&" \
-              f"from={self.from_date}&" \
-              f"to={self.to_date}&" \
-              f"language={self.language}&" \
-              f"apiKey={self.api_key}"
-        return url
+
 
 
 if __name__ == "__main__":
